@@ -7,13 +7,13 @@ function Home(){
     }
 
     const purchase = ()=>{
-        gtag("event",  "purchase",  {
-            "transaction_id": "00002",
-            "items": [{
-                "id": "P001",
-                "name": "제품1"
-            }]
-        });
+        // gtag("event",  "purchase",  {
+        //     "transaction_id": "00002",
+        //     "items": [{
+        //         "id": "P001",
+        //         "name": "제품1"
+        //     }]
+        // });
     }
 
     return (
@@ -33,6 +33,9 @@ function Home(){
                         <Accordion.Item eventKey="1">
                             <Accordion.Header>GA4/GTM E-COMMERCE TEST</Accordion.Header>
                             <Accordion.Body>
+                                <ListGroup>
+                                    <ListGroupItem onClick={pageViewHandler} as={Button}>구매</ListGroupItem>
+                                </ListGroup>
                             </Accordion.Body>
                         </Accordion.Item>
                         <Accordion.Item eventKey="2">
