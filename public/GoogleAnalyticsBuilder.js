@@ -87,6 +87,32 @@ function GA_Event(category, action, label){
     }
 }
 
+function GA_Event2({ category, action, label, ...params}){
+    try{
+        if(browserInfo.indexOf('GA_iOS_WK') > -1 || browserInfo.indexOf('GA_Android') > -1){
+            var GAData = new Object();
+            GAData.event_name = params.eventName ? params.eventName : "click_event";
+            GAData.category = category;
+            GAData.action = action;
+            GAData.label = label;
+            GAData.type = "event";
+            GAData = {...GAData, ...params};
+            Hybrid(GAData);
+        }else{
+            dataLayer.push({
+                "event" : "ga_event",
+                "event_name" : "click_event",
+                "category" : category,
+                "action" : action,
+                "label" : label,
+            });
+        }
+    }catch(e){
+        if(e.message.indexOf("dataLayer")){ console.log("GA_Event 함수 ERROR");}
+        else{ console.log("APP 코드 시 ERROR") }
+    }
+}
+
 function GA_Attr_Event(event){
     try{
         var ele = event.currentTarget
@@ -158,8 +184,7 @@ function EcommerceSet(E_step, Products, actionList, addDimension, addMetric){
                 'label' : undefined,
                 'metric1' : undefined,
                 'metric2' : undefined,
-                'metric3' : undefined,
-
+                'metric3' : undefined
             });
         }
     }catch(e){
