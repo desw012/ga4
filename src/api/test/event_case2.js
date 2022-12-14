@@ -2,7 +2,7 @@ import {GA_Event2, makeTextByLength } from './index'
 
 const event_case1 = (category, action, label) => {
 
-    const text = makeTextByLength(1000);
+    const text = makeTextByLength(100);
 
     GA_Event2({
         category : 'MyCategory',

@@ -5,7 +5,7 @@ const event_case1 = (category, action, label) => {
         category : 'MyCategory',
         action : 'MyAction',
         label : 'MyLabel',
-        eventName : 'eventName:!@#$%^',
+        eventName : 'eventName:!',
         ep_TestCaseDescription : `event_case3 - 허용하지 않은 특수문자를 가진 eventName인 경우`
     });
 }

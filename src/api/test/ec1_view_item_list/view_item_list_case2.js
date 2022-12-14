@@ -3,10 +3,11 @@ import {EcommerceSet} from "../index";
 const view_item_list_case2 = () => {
 
     const action = {
-        currencyCode : 'KRW'
+        item_list_id : 'MY_ITEM_LIST_ID',
+        item_list_name : 'MY_ITEM_LIST_NAME'
     }
 
-    const items = undefined;
+    const items = [];
 
     const dimensions = {
         ep_TestCaseDescription : 'view_item_list_case2 - 아이템이 없는 경우 '
