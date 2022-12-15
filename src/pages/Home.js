@@ -52,6 +52,8 @@ import begin_checkout_case1 from "../api/test/ec6_begin_checkout/begin_checkout_
 import begin_checkout_case2 from "../api/test/ec6_begin_checkout/begin_checkout_case2";
 import begin_checkout_case3 from "../api/test/ec6_begin_checkout/begin_checkout_case3";
 import view_item_list_case4 from "../api/test/ec1_view_item_list/view_item_list_case4";
+import user_properties_case6 from "../api/test/user_properties_case6";
+import user_properties_case7 from "../api/test/user_properties_case7";
 
 function Home(){
     const pageViewHandler = () => {
@@ -113,6 +115,9 @@ function Home(){
                                     <ListGroupItem onClick={ () => { user_properties_case3(36) } } as={Button}>user_properties_case3(36)</ListGroupItem>
                                     <ListGroupItem onClick={ () => { user_properties_case4(25) } } as={Button}>user_properties_case4(25)</ListGroupItem>
                                     <ListGroupItem onClick={ () => { user_properties_case5() } } as={Button}>user_properties_case5</ListGroupItem>
+                                    <ListGroupItem onClick={ () => { user_properties_case6() } } as={Button}>user_properties_case6</ListGroupItem>
+                                    <ListGroupItem onClick={ () => { user_properties_case7() } } as={Button}>user_properties_case7</ListGroupItem>
+
                                 </ListGroup>
                             </Accordion.Body>
                         </Accordion.Item>
