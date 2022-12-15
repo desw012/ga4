@@ -54,6 +54,10 @@ import begin_checkout_case3 from "../api/test/ec6_begin_checkout/begin_checkout_
 import view_item_list_case4 from "../api/test/ec1_view_item_list/view_item_list_case4";
 import user_properties_case6 from "../api/test/user_properties_case6";
 import user_properties_case7 from "../api/test/user_properties_case7";
+import view_item_case7 from "../api/test/ec3_view_item/view_item_case7";
+import refund_case5 from "../api/test/ec8_refund/refund_case5";
+import refund_case7 from "../api/test/ec8_refund/refund_case7";
+import refund_case8 from "../api/test/ec8_refund/refund_case8";
 
 function Home(){
     const pageViewHandler = () => {
@@ -164,6 +168,8 @@ function Home(){
                                     <ListGroupItem onClick={ () => { view_item_case4() } } as={Button}>view_item_case4</ListGroupItem>
                                     <ListGroupItem onClick={ () => { view_item_case5() } } as={Button}>view_item_case5</ListGroupItem>
                                     <ListGroupItem onClick={ () => { view_item_case6() } } as={Button}>view_item_case6</ListGroupItem>
+                                    <ListGroupItem onClick={ () => { view_item_case7() } } as={Button}>view_item_case7</ListGroupItem>
+
                                 </ListGroup>
                             </Accordion.Body>
                         </Accordion.Item>
@@ -219,6 +225,11 @@ function Home(){
                                     <ListGroupItem onClick={ () => { refund_case2() } } as={Button}>refund_case2</ListGroupItem>
                                     <ListGroupItem onClick={ () => { refund_case3() } } as={Button}>refund_case3</ListGroupItem>
                                     <ListGroupItem onClick={ () => { refund_case4() } } as={Button}>refund_case4</ListGroupItem>
+                                    <ListGroupItem onClick={ () => { refund_case5() } } as={Button}>refund_case5</ListGroupItem>
+                                    <ListGroupItem onClick={ () => { refund_case7() } } as={Button}>refund_case7</ListGroupItem>
+                                    <ListGroupItem onClick={ () => { refund_case8() } } as={Button}>refund_case8</ListGroupItem>
+
+
                                 </ListGroup>
                             </Accordion.Body>
                         </Accordion.Item>

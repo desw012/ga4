@@ -3,7 +3,7 @@ import purchase_mockup from "./purchase_mockup";
 
 const refund_case1 = () => {
     const transaction_id = new Date().getTime()
-    purchase_mockup(transaction_id);
+    purchase_mockup(transaction_id, 'refund_case1 - 정상적인 요청 ');
 
     const action = {
         currency : 'KRW',

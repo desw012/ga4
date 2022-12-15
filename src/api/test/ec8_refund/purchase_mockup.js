@@ -1,6 +1,6 @@
 import {EcommerceSet} from "../index";
 
-const purchase_case1 = (transaction_id) => {
+const purchase_case1 = (transaction_id, ep_TestCaseDescription) => {
 
     const action = {
         currency : 'KRW',
@@ -79,7 +79,7 @@ const purchase_case1 = (transaction_id) => {
     ]
 
     const dimensions = {
-        ep_TestCaseDescription : 'purchase_mockup - 정상적인 요청 '
+        ep_TestCaseDescription : ep_TestCaseDescription ? ep_TestCaseDescription : 'purchase_mockup - 정상적인 요청 '
     }
 
     EcommerceSet('purchase', items, action, [], dimensions, []);

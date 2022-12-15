@@ -1,6 +1,6 @@
 import {EcommerceSet} from "../index";
 
-const view_item_case6 = () => {
+const view_item_case7 = () => {
 
     const action = {
         currency : 'KRW',
@@ -9,11 +9,11 @@ const view_item_case6 = () => {
 
     const items = [
         {
-            item_id: "ITEM-1",
-            item_name: "ITEM-1",
+            item_id: "ITEM-100",
+            item_name: "ITEM-100",
             affiliation : "MyStore",
             coupon : "MyCoupon",
-            currency : "USD",
+            currency : "!@#",
             discount : 0,
             index : 0,
             item_brand : "My",
@@ -26,16 +26,16 @@ const view_item_case6 = () => {
             item_list_name : "MY_ITEM_LIST_NAME",
             item_variant : "흰색",
             location_id : "ChIJe2MupwCkfDURFTPUEriw-i0",
-            price : 10,
+            price : 9999999999999999999999999999999999999999999999999,
             quantity : 1
         }
     ]
 
     const dimensions = {
-        ep_TestCaseDescription : 'view_item_case6 - 아이템과 action 정보가 다른 경우'
+        ep_TestCaseDescription : 'view_item_case7 - type 오류 정보가 다른 경우'
     }
 
     EcommerceSet('view_item', items, action, [], dimensions, []);
 }
 
-export default view_item_case6;
+export default view_item_case7;

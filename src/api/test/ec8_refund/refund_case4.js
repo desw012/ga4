@@ -3,7 +3,7 @@ import purchase_mockup from "./purchase_mockup";
 
 const refund_case4 = () => {
     const transaction_id = new Date().getTime()
-    purchase_mockup(transaction_id);
+    purchase_mockup(transaction_id, 'refund_case4 - 환불 금액이 구매 금액이랑 다른 경우 ');
 
     const action = {
         currency : 'KRW',

@@ -1,14 +1,17 @@
 import {EcommerceSet} from "../index";
-import purchase_case1 from "../ec7_purchase/purchase_case1";
+import purchase_mockup from "./purchase_mockup";
+import purchase_mockup2 from "./purchase_mockup2";
+import purchase_mockup3 from "./purchase_mockup3";
 
-const refund_case3 = () => {
+const refund_case7 = () => {
     const transaction_id = new Date().getTime()
-    purchase_case1(transaction_id, 'refund_case3 - 아이템의 필수 값이 없는 경우 ');
+    const prefix = 'T';
+    purchase_mockup3(transaction_id, 'refund_case7 - 트랜젝션 아이디가 없는 경우', prefix);
 
     const action = {
         currency : 'KRW',
-        value : 90000,
-        transaction_id : transaction_id,
+        value : 40000,
+        // transaction_id : transaction_id,
         affiliation : "MyStore-1",
         coupon : "MyCoupon-1",
         shipping : 3000,
@@ -17,6 +20,8 @@ const refund_case3 = () => {
 
     const items = [
         {
+            item_id: `${prefix}ITEM-1`,
+            item_name: `${prefix}ITEM-1`,
             affiliation : "MyStore",
             coupon : "MyCoupon",
             currency : "KRW",
@@ -36,6 +41,8 @@ const refund_case3 = () => {
             quantity : 1
         },
         {
+            item_id: `${prefix}ITEM-2`,
+            item_name: `${prefix}ITEM-2`,
             affiliation : "MyStore",
             coupon : "MyCoupon",
             currency : "KRW",
@@ -55,6 +62,8 @@ const refund_case3 = () => {
             quantity : 1
         },
         {
+            item_id: `${prefix}ITEM-3`,
+            item_name: `${prefix}ITEM-3`,
             affiliation : "MyStore",
             coupon : "MyCoupon",
             currency : "KRW",
@@ -76,10 +85,11 @@ const refund_case3 = () => {
     ]
 
     const dimensions = {
-        ep_TestCaseDescription : 'refund_case3 - 아이템의 필수 값이 없는 경우 '
+        ep_TestCaseDescription : 'refund_case7 - 트랜젝션 아이디가 없는 경우'
     }
 
     EcommerceSet('refund', items, action, [], dimensions, []);
+    EcommerceSet('refund', items, action, [], dimensions, []);
 }
 
-export default refund_case3;
+export default refund_case7;

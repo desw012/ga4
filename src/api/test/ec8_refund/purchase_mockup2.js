@@ -1,9 +1,6 @@
 import {EcommerceSet} from "../index";
-import purchase_case1 from "../ec7_purchase/purchase_case1";
 
-const refund_case3 = () => {
-    const transaction_id = new Date().getTime()
-    purchase_case1(transaction_id, 'refund_case3 - 아이템의 필수 값이 없는 경우 ');
+const purchase_case1 = (transaction_id, ep_TestCaseDescription) => {
 
     const action = {
         currency : 'KRW',
@@ -17,6 +14,8 @@ const refund_case3 = () => {
 
     const items = [
         {
+            item_id: "ITEM-122",
+            item_name: "ITEM-122",
             affiliation : "MyStore",
             coupon : "MyCoupon",
             currency : "KRW",
@@ -36,6 +35,8 @@ const refund_case3 = () => {
             quantity : 1
         },
         {
+            item_id: "ITEM-222",
+            item_name: "ITEM-222",
             affiliation : "MyStore",
             coupon : "MyCoupon",
             currency : "KRW",
@@ -55,6 +56,8 @@ const refund_case3 = () => {
             quantity : 1
         },
         {
+            item_id: "ITEM-322",
+            item_name: "ITEM-322",
             affiliation : "MyStore",
             coupon : "MyCoupon",
             currency : "KRW",
@@ -76,10 +79,10 @@ const refund_case3 = () => {
     ]
 
     const dimensions = {
-        ep_TestCaseDescription : 'refund_case3 - 아이템의 필수 값이 없는 경우 '
+        ep_TestCaseDescription : ep_TestCaseDescription ? ep_TestCaseDescription : 'purchase_mockup - 정상적인 요청 '
     }
 
-    EcommerceSet('refund', items, action, [], dimensions, []);
+    EcommerceSet('purchase', items, action, [], dimensions, []);
 }
 
-export default refund_case3;
+export default purchase_case1;

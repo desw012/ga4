@@ -12,13 +12,13 @@ const makeTextByLength = (len) => {
     }
     return text;
 }
-const screen_view_case5 = (length) => {
+const screen_view_case6 = (length) => {
     let location = makeTextByLength(length - '/TEST/screen_view_case5'.length);
     GADataScreen({
         title : 'TEST SCREEN : 6',
         location : '/TEST/screen_view_case5' + location,
-        ep_TestCaseDescription : `screen_view_case5 - 비 정상적인 Location length인 경우 (length ${length}`
+        ep_TestCaseDescription : `screen_view_case6 - 비 정상적인 Location length인 경우 (length ${length}`
     });
 }
 
-export default screen_view_case5;
+export default screen_view_case6;
