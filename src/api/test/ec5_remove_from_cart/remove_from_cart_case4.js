@@ -4,12 +4,12 @@ const remove_from_cart_case2 = () => {
 
     const action = {
         currency : 'KRW',
-        value : 90000
+        value : 50000
     }
 
     const items = [
         {
-            item_id: "4",
+            item_id: "ITEM-4",
             item_name: "ITEM-4",
             affiliation : "MyStore",
             coupon : "MyCoupon",

@@ -17,6 +17,8 @@ const refund_case4 = () => {
 
     const items = [
         {
+            item_id: "ITEM-1",
+            item_name: "ITEM-1",
             affiliation : "MyStore",
             coupon : "MyCoupon",
             currency : "KRW",
@@ -36,6 +38,8 @@ const refund_case4 = () => {
             quantity : 1
         },
         {
+            item_id: "ITEM-2",
+            item_name: "ITEM-2",
             affiliation : "MyStore",
             coupon : "MyCoupon",
             currency : "KRW",
@@ -55,6 +59,8 @@ const refund_case4 = () => {
             quantity : 1
         },
         {
+            item_id: "ITEM-3",
+            item_name: "ITEM-3",
             affiliation : "MyStore",
             coupon : "MyCoupon",
             currency : "KRW",

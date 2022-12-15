@@ -11,7 +11,7 @@ const view_item_case5 = () => {
         {
             affiliation : "MyStore",
             coupon : "MyCoupon",
-            currency : "USD",
+            currency : "KRW",
             discount : 0,
             index : 0,
             item_brand : "My",

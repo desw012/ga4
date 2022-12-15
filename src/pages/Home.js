@@ -51,6 +51,7 @@ import user_properties_case4 from "../api/test/user_properties_case4";
 import begin_checkout_case1 from "../api/test/ec6_begin_checkout/begin_checkout_case1";
 import begin_checkout_case2 from "../api/test/ec6_begin_checkout/begin_checkout_case2";
 import begin_checkout_case3 from "../api/test/ec6_begin_checkout/begin_checkout_case3";
+import view_item_list_case4 from "../api/test/ec1_view_item_list/view_item_list_case4";
 
 function Home(){
     const pageViewHandler = () => {
@@ -109,7 +110,7 @@ function Home(){
                                     <ListGroupItem onClick={ () => { user_properties_case1() } } as={Button}>user_properties_case1</ListGroupItem>
                                     <ListGroupItem onClick={ () => { user_properties_case2() } } as={Button}>user_properties_case2</ListGroupItem>
                                     <ListGroupItem onClick={ () => { user_properties_case3(1000) } } as={Button}>user_properties_case3(1000)</ListGroupItem>
-                                    <ListGroupItem onClick={ () => { user_properties_case3(37) } } as={Button}>user_properties_case3(37)</ListGroupItem>
+                                    <ListGroupItem onClick={ () => { user_properties_case3(36) } } as={Button}>user_properties_case3(36)</ListGroupItem>
                                     <ListGroupItem onClick={ () => { user_properties_case4(25) } } as={Button}>user_properties_case4(25)</ListGroupItem>
                                     <ListGroupItem onClick={ () => { user_properties_case5() } } as={Button}>user_properties_case5</ListGroupItem>
                                 </ListGroup>
@@ -132,6 +133,8 @@ function Home(){
                                     <ListGroupItem onClick={ () => { view_item_list_case1() } } as={Button}>view_item_list_case1</ListGroupItem>
                                     <ListGroupItem onClick={ () => { view_item_list_case2() } } as={Button}>view_item_list_case2</ListGroupItem>
                                     <ListGroupItem onClick={ () => { view_item_list_case3() } } as={Button}>view_item_list_case3</ListGroupItem>
+                                    <ListGroupItem onClick={ () => { view_item_list_case4(101) } } as={Button}>view_item_list_case4(101)</ListGroupItem>
+
 
                                 </ListGroup>
                             </Accordion.Body>

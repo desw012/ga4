@@ -1,15 +1,16 @@
-import {EcommerceSet} from "../index";
+import {EcommerceSet, makeTextByLength} from "../index";
 
-const view_item_case1 = () => {
+const view_item_list_case4 = (length) => {
+    const text = makeTextByLength(length);
 
     const action = {
-        currency : 'KRW',
-        value : 10000
+        item_list_id : 'MY_ITEM_LIST_ID',
+        item_list_name : 'MY_ITEM_LIST_NAME',
     }
 
     const items = [
         {
-            item_id: "ITEM-1",
+            item_id: text,
             item_name: "ITEM-1",
             affiliation : "MyStore",
             coupon : "MyCoupon",
@@ -32,10 +33,10 @@ const view_item_case1 = () => {
     ]
 
     const dimensions = {
-        ep_TestCaseDescription : 'view_item_case1 - 정상적인 요청 '
+        ep_TestCaseDescription : `view_item_list_case4 - item_id가 긴 경우(${length})`
     }
 
-    EcommerceSet('view_item', items, action, [], dimensions, []);
+    EcommerceSet('view_item_list', items, action, [], dimensions, []);
 }
 
-export default view_item_case1;
+export default view_item_list_case4;

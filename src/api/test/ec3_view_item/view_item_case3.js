@@ -8,11 +8,11 @@ const view_item_case3 = () => {
 
     const items = [
         {
-            item_id: "1",
+            item_id: "ITEM-1",
             item_name: "ITEM-1",
             affiliation : "MyStore",
             coupon : "MyCoupon",
-            currency : "USD",
+            currency : "KRW",
             discount : 0,
             index : 0,
             item_brand : "My",

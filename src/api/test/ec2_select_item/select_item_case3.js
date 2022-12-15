@@ -9,7 +9,7 @@ const select_item_case3 = () => {
 
     const items = [
         {
-            item_id: "1",
+            item_id: "ITEM-1",
             item_name: "ITEM-1",
             affiliation : "MyStore",
             coupon : "MyCoupon",

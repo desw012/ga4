@@ -9,6 +9,8 @@ const view_item_case5 = () => {
 
     const items = [
         {
+            item_id: "ITEM-1",
+            item_name: "ITEM-1",
             affiliation : "MyStore",
             coupon : "MyCoupon",
             currency : "USD",
