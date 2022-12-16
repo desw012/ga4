@@ -53,7 +53,7 @@ function GADataScreen(Object){
                     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
                 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','G-RC6LK6MGRQ'); //GTM 컨테이너 ID 설정
+            })(window,document,'script','dataLayer',''); //GTM 컨테이너 ID 설정
         }
     }catch(e){
         if(e.message.indexOf("dataLayer")){ console.log("GADataScreen 함수 ERROR");}
