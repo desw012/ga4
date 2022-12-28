@@ -14,6 +14,7 @@ function Header() {
                         <Nav.Link href="/categories/2">category2</Nav.Link>
                         <Nav.Link href="/categories/3">category3</Nav.Link>
                         <Link to='/spa'>SPA LINK</Link>
+                        <Link to='/HOME2' className="nav-link">SPA LINK</Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

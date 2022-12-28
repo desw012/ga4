@@ -16,7 +16,6 @@ var browserInfo = navigator.userAgent;
 // pageviewObj.dimension4 = "서울시 강남구";
 // pageviewObj.dimension5 = "U";
 // 중간생략
-
 // GA_DataScreen(pageviewObj);
 
 

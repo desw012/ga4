@@ -32,6 +32,12 @@
   <script src="https://cdn.jsdelivr.net/npm/react-bootstrap@next/dist/react-bootstrap.min.js" crossorigin></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
 
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({});
+  </script>
+  <script src="./GAUtils.js?id=GTM-WLWGQFF"></script>
+
   <!-- Google tag (gtag.js) -->
 <!--  <script async src="https://www.googletagmanager.com/gtag/js"></script>-->
 <!--  <script>-->
@@ -42,7 +48,45 @@
 <!--    gtag('config', 'G-RC6LK6MGRQ', { 'debug_mode':true });-->
 <!--    // gtag('config', 'UA-250899729-1');-->
 <!--  </script>-->
-  <script src="./GoogleAnalyticsBuilder2.js" crossorigin></script>
+  <script>
+    // window.dataLayer = window.dataLayer || [{}];
+    // window.dataLayer.push({
+    //   ep_text : 'TEST DATA'
+    // })
+    // (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    //           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    //         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    //         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    // })(window,document,'script','dataLayer','GTM-WLWGQFF');
+    // if(window.gascriptAndroid && window.gascriptAndroid.getAppInstanceId){
+    //   document.cookie = `_ga=GA1.1.${window.gascriptAndroid.getAppInstanceId()}`;
+    // }
+    //
+    // if(window.gascriptAndroid && window.gascriptAndroid.getSessionId){
+    //   document.cookie = `_ga=GA1.1.${window.gascriptAndroid.getSessionId()}`;
+    // }
+
+    // var dataLayer = [{'debug_mode':true, isNative : true}];
+    // (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    //           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    //         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    //         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    // })(window,document,'script','dataLayer','GTM-WLWGQFF')
+
+    // document.addEventListener('message', (e)=>{
+    //   const h1 = document.createElement('h1');
+    //   h1.innerText = e.data;
+    //   document.body.appendChild(h1);
+    // });
+
+    // var a = {"client_id":"TT120929003","user_id":"e850f70f8e8cb88a9e21863783cc2cde6c28b9054934660cf40920c5e94f6458","timestamp_micros":1671613102104,"user_properties":{"user_cid":{"value":"TT120929003"},"user_userid":{"value":"e850f70f8e8cb88a9e21863783cc2cde6c28b9054934660cf40920c5e94f6458"}},"events":[{"name":"page_view","params":{"page_title":"결제","page_location":"www.lotteimall.com/Tvpay_간편주문서 접속","user_device_type":"onetv","user_chldtl_no":"U","engagement_time_msec":1}}]}
+    // fetch(`https://www.google-analytics.com/mp/collect?measurement_id=G-RC6LK6MGRQ&api_secret=UqW4zHLfQaap-5R3-8o_ag`, {contentType : 'application/json',
+    //   method: "POST",
+    //   body: JSON.stringify(a)})
+
+  </script>
+<!--  <script src="GAUtils.js?id=GTM-WLWGQFF"></script>-->
+
 
 </head>
 <body>
@@ -59,10 +103,16 @@
   To create a production bundle, use `npm run build` or `yarn build`.
 -->
 <script>
+
   // GADataScreen({
   //   location : document.location.href,
   //   title : document.title
   // });
+</script>
+<script>
+  // const h1 = document.createElement('h1');
+  // h1.innerText = document.cookie;
+  // document.body.appendChild(h1);
 </script>
 </body>
 </html>
