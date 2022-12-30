@@ -37,7 +37,6 @@ function Hybrid(GADATA){
     if (browserInfo.indexOf(AndroidWebview) > -1) window.gascriptAndroid.GA_DATA(JSON.stringify(emptyObject));
     else if (browserInfo.indexOf(iOS_Webview_WK) > -1) webkit.messageHandlers.gascriptCallbackHandler.postMessage(JSON.stringify(emptyObject));
 }
-
 // 공통 화면 함수
 function GADataScreen(Object){
     try{

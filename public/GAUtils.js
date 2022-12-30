@@ -1,5 +1,5 @@
 /**
- * [ES6] GoogleAnlayticsBuilder
+ * [ES6] GAUtils.js FIXME: ES6으로 개발 시 국내 기준 1% 미지원
  * Support Hybrid App
  */
 (function(window, document, options){
@@ -21,6 +21,7 @@
             return queryParams.get('id');
         })(document.currentScript.src) || 'GTM-XXXXXXX' //
     }
+
     const {
         prefixFnName,
         prefixAttrDataSet,
@@ -52,17 +53,20 @@
     })(window);
 
     //===================== [PRIVATE FUNCTIONS : S] ==========================/
+    /**
+     * obj에 정의된 데이터를 초기화 한다.
+     * FIXME : 이벤트에서 기존 데이터를 Overriding 하는 경우 처리는
+     */
     function pushResetObject(obj){
         const resetObj = {};
         for(const key in obj){
             resetObj[key] = undefined;
         }
-        resetObj.event = COMMAND_RESET;
         dataLayer.push(resetObj)
     }
 
     /**
-     * 웹 이벤트를 네이티브 이벤트 명으로 변경한다.
+     * 웹 이벤트를 네이티브 이벤트로 변경한다.
      */
     const updateNativeEvent = (function(){
         const events = {};
@@ -77,6 +81,11 @@
 
     //===================== [PUBLIC FUNCTIONS : S] ==========================/
     const pageView = (obj) => {
+        //valid
+        /**
+         * FIXME: 가상 페이지 여부를 요기서 처리해도 될려나??
+         * dataLayer push 시에는 이미 이벤트가 발생되었는데...
+         */
         if(dataLayer.length > 0){
             obj = { ...obj, event : COMMAND_VIRTUAL_PAGE_VIEW }
         }
@@ -89,8 +98,8 @@
     }
 
     const ecommerce = (obj) => {
-
-
+        //valid
+        //ex default currency 추가
 
         dataLayer.push(obj);
     }
@@ -106,7 +115,7 @@
 
     const eventByAttr = (el) => {
         const obj = Array.from(el.attributes).filter(function(attr){
-            return attr.name.startsWith(prefixAttrDataSet) || attr.name.startsWith(prefixAttrData);
+            return attr.name.indexOf(prefixAttrDataSet) === 0 || attr.name.indexOf(prefixAttrData) === 0;
         }).reduce(function(newObj, obj) {
             newObj[obj.name] = obj.value;
             return newObj;
@@ -149,10 +158,11 @@
         /**
          * [Hybrid] dataLayer에 Object Push 되는 경우 네이티브로 전송한다.
          * 1. pageview
+         * !!!ga4 공식 문서 사용가능
          */
         dataLayer.push = (function (){
             const _push = dataLayer.push;
-            const viewStack = [];
+            const dataObjectStack = [];
             return function (param){
                 const rtn = _push.apply(dataLayer, arguments);
 
@@ -173,38 +183,41 @@
          */
         dataLayer.push = (function(){
             const _push = dataLayer.push;
-            const viewStack = [];
+            const dataObjectStack = [];
             return function (param) {
                 const rtn = _push.apply(dataLayer, arguments);
 
-                if(!param.event){
-
-                } else if (param.event === COMMAND_VIRTUAL_PAGE_VIEW){
-                    viewStack.push({
-                        curr : '', prev : ''
-                    });
-                } else if( param.event === COMMAND_POP_VIRTUAL_PAGE_VIEW) {
-
-                } else if( param.event === COMMAND_REPLACE_VIRTUAL_PAGE_VIEW) {
-
-                }
+                //가상 페이지는 어떻게 한번에 하지....
+                // 구현 목표 : 페이지 뷰 데이터 > 가상 페이지 > 이벤트 > 가상 페이지 > 이벤트 > close > 이벤트 > close > 이벤트
+                // 이벤트 전송 시 각 뷰에 맞는 이벤트 파라미터가 전송될 수 있도록
+                // 가상 페이지 기존 페이지 뷰 데이터 초기화 후 가상 페이지뷰 정보로 셋팅 !! 이부분이 dataLayer에서 처리 할 수 없는데.
+                // 가상 페이지가 close 시 페이지 뷰 데이터 초기화 이전 페이지뷰 정보로 push
+                // REPLACE 시 이전 페이지 데이터 초기화 후 신규로 추가.
+                // 가상 페이지 > 가상페이지 인 경우 대비 해 stack 구조로 구성
+                // if(!param.event){
+                //
+                // } else if (param.event === COMMAND_VIRTUAL_PAGE_VIEW){
+                //     viewStack.push({
+                //         curr : '', prev : ''
+                //     });
+                // } else if( param.event === COMMAND_POP_VIRTUAL_PAGE_VIEW) {
+                //
+                // } else if( param.event === COMMAND_REPLACE_VIRTUAL_PAGE_VIEW) {
+                //
+                // }
 
                 //초기화 처리
-                if(!param.event ||
-                    (!param.event.startsWith('gtm') && param.event !== COMMAND_RESET )){
+                //FIXME : 기본 이벤트 항목 추가 필요.
+                if( param.event && !(param.event.indexOf('gtm') === 0) ){
                     pushResetObject(param);
                 }
 
                 if(this.length === 1){
                     startGTMSnippetCode();
                 }
-
                 return rtn;
             }
         })();
-        if(dataLayer.length > 0){
-            startGTMSnippetCode();
-        }
     }
     //===================== [INSTALL : E] ==========================/
 })(window, document, undefined);
