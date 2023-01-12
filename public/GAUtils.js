@@ -1,6 +1,7 @@
 /**
- * [ES6] GAUtils.js FIXME: ES6으로 개발 시 국내 기준 1% 미지원
+ * GAUtils.js
  * Support Hybrid App
+ * FIXME: ES6으로 개발 시 국내 기준 1% 미지원
  */
 (function(window, document, options){
     //예약어
@@ -44,9 +45,9 @@
 
     /**
      * [DataLayer] GA로 전달하는 인터페이스
-    * Array로 추적코드가 로딩 전 발생된 이벤트를 처리하기 위해 queue 방식으로 이벤트를 처리한다.
-    * Window Object에 선언되어야 한다.
-    */
+     * Array로 추적코드가 로딩 전 발생된 이벤트를 처리하기 위해 queue 방식으로 이벤트를 처리한다.
+     * GTM에서 재선언을 하기 때문에 Window Object에 선언되어야 한다.
+     */
     const dataLayer = (function(window){
         window[dataLayerName] = window[dataLayerName] || [];
         return window[dataLayerName];
@@ -77,7 +78,7 @@
         }
     })();
 
-    //===================== [PRIVATE FUNCTIONS : S] ==========================/
+    //===================== [PRIVATE FUNCTIONS : E] ==========================/
 
     //===================== [PUBLIC FUNCTIONS : S] ==========================/
     const pageView = (obj) => {
@@ -187,7 +188,7 @@
             return function (param) {
                 const rtn = _push.apply(dataLayer, arguments);
 
-                //가상 페이지는 어떻게 한번에 하지....
+                // 가상 페이지는 어떻게 한번에 하지....
                 // 구현 목표 : 페이지 뷰 데이터 > 가상 페이지 > 이벤트 > 가상 페이지 > 이벤트 > close > 이벤트 > close > 이벤트
                 // 이벤트 전송 시 각 뷰에 맞는 이벤트 파라미터가 전송될 수 있도록
                 // 가상 페이지 기존 페이지 뷰 데이터 초기화 후 가상 페이지뷰 정보로 셋팅 !! 이부분이 dataLayer에서 처리 할 수 없는데.

@@ -58,11 +58,20 @@ import view_item_case7 from "../api/test/ec3_view_item/view_item_case7";
 import refund_case5 from "../api/test/ec8_refund/refund_case5";
 import refund_case7 from "../api/test/ec8_refund/refund_case7";
 import refund_case8 from "../api/test/ec8_refund/refund_case8";
+import {useEffect} from "react";
 
 function Home2(){
     const pageViewHandler = () => {
         gtag('event', 'myEvent');
     }
+
+    useEffect(()=>{
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-WLWGQFF')
+    },[]);
 
     const purchase = ()=>{
         // gtag("event",  "purchase",  {
